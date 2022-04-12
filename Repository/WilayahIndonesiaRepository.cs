@@ -15,9 +15,9 @@ namespace WilayahIndonesia.Repository
         private readonly string pathFile = Path.Combine(Directory.GetCurrentDirectory(), "csv");
 
         #region Provinsi
-        public List<ProvinsiList> GetAllProvinsi(int? provinsiid)
+        public List<ProvinsiList> GetAllProvinsi(int? provinsiid, string path)
         {
-            string fileName = Path.Combine(pathFile, "provinces.csv");
+            string fileName = Path.Combine(path, "provinces.csv");
 
             List<ProvinsiList> provinsiLists = new();
             if(provinsiid == null)

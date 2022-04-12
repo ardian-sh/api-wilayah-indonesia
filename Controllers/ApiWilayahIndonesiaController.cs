@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WilayahIndonesia.Repository;
 using kelurahan.Model;
+using Microsoft.AspNetCore.Hosting;
 
 namespace ApiWilayahIndonesia.Controllers
 {
@@ -17,7 +18,13 @@ namespace ApiWilayahIndonesia.Controllers
     [ApiController]
     public class ApiWilayahIndonesiaController : ControllerBase
     {
+        public readonly IWebHostEnvironment _env;
+        public ApiWilayahIndonesiaController(IWebHostEnvironment hostEnvironment)
+        {
+            _env = hostEnvironment;
+        }
         readonly WilayahIndonesiaRepository dataRepo = new();
+
 
         [HttpGet("provinsi")]
         public ActionResult GetProvinsi(string Id)
@@ -36,7 +43,7 @@ namespace ApiWilayahIndonesia.Controllers
 
                 int? idProvinsi = string.IsNullOrEmpty(Id) ? null: ProvinsiIdCheck;
 
-                List<ProvinsiList> provinsiLists = dataRepo.GetAllProvinsi(idProvinsi);
+                List<ProvinsiList> provinsiLists = dataRepo.GetAllProvinsi(idProvinsi,_env.WebRootPath);
                 if(provinsiLists.Count > 0)
                 {
                     provinsi.Deskripsi = "OK";

@@ -13,4 +13,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\districts.csv" />
+    <None Include="wwwroot\provinces.csv" />
+    <None Include="wwwroot\regencies.csv" />
+    <None Include="wwwroot\villages.csv" />
+  </ItemGroup>
+
 </Project>
