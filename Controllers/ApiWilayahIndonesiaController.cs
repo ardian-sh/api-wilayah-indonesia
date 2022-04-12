@@ -50,9 +50,9 @@ namespace ApiWilayahIndonesia.Controllers
                     provinsi.Provinsi = new();
                 }
             }
-            catch
+            catch(Exception e)
             {
-                provinsi.Deskripsi = "Terjadi kesalahan saat memproses permintaan";
+                provinsi.Deskripsi = "Terjadi kesalahan saat memproses permintaan "+e.Message;
                 provinsi.Kode = 500;
                 provinsi.Provinsi = new();
             }
