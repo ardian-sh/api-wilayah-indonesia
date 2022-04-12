@@ -12,12 +12,11 @@ namespace WilayahIndonesia.Repository
 {
     public class WilayahIndonesiaRepository
     {
-        private readonly string pathFile = Path.Combine(Directory.GetCurrentDirectory(), "csv");
 
         #region Provinsi
         public List<ProvinsiList> GetAllProvinsi(int? provinsiid, string path)
         {
-            string fileName = Path.Combine(path, "provinces.csv");
+            string fileName = Path.Combine(path, "csv","provinces.csv");
 
             List<ProvinsiList> provinsiLists = new();
             if(provinsiid == null)
@@ -46,9 +45,9 @@ namespace WilayahIndonesia.Repository
         #endregion
 
         #region Kota
-        public List<KotaList> GetKota(int provinsiId)
+        public List<KotaList> GetKota(int provinsiId, string path)
         {
-            string fileName = Path.Combine(pathFile, "regencies.csv");
+            string fileName = Path.Combine(path,"csv", "regencies.csv");
 
             List<KotaList> kotaLists = new();
 
@@ -72,9 +71,9 @@ namespace WilayahIndonesia.Repository
         #endregion
 
         #region Kecamatan
-        public List<KecamatanList> GetKecamatan(int kotaId)
+        public List<KecamatanList> GetKecamatan(int kotaId,string path)
         {
-            string fileName = Path.Combine(pathFile, "districts.csv");
+            string fileName = Path.Combine(path, "csv", "districts.csv");
 
             List<KecamatanList> kecamatanLists = new();
 
@@ -98,9 +97,9 @@ namespace WilayahIndonesia.Repository
         #endregion
 
         #region Kelurahan
-        public List<KelurahanList> GetKelurahan(long kecamatanId)
+        public List<KelurahanList> GetKelurahan(long kecamatanId,string path)
         {
-            string fileName = Path.Combine(pathFile, "villages.csv");
+            string fileName = Path.Combine(path, "csv", "villages.csv");
 
             List<KelurahanList> kelurahanLists = new();
 

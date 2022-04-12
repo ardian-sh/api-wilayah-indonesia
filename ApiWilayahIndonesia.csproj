@@ -14,10 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\districts.csv" />
-    <None Include="wwwroot\provinces.csv" />
-    <None Include="wwwroot\regencies.csv" />
-    <None Include="wwwroot\villages.csv" />
+    <None Include="wwwroot\csv\districts.csv" />
+    <None Include="wwwroot\csv\provinces.csv" />
+    <None Include="wwwroot\csv\regencies.csv" />
+    <None Include="wwwroot\csv\villages.csv" />
   </ItemGroup>
 
 </Project>

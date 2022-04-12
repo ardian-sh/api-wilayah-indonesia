@@ -83,7 +83,7 @@ namespace ApiWilayahIndonesia.Controllers
                     return Ok(kota);
                 }
 
-                List<KotaList> kotaLists = dataRepo.GetKota(idProvinsi);
+                List<KotaList> kotaLists = dataRepo.GetKota(idProvinsi, _env.WebRootPath);
                 if (kotaLists.Count > 0)
                 {
                     kota.Deskripsi = "OK";
@@ -122,7 +122,7 @@ namespace ApiWilayahIndonesia.Controllers
                     return Ok(kecamatan);
                 }
 
-                List<KecamatanList> kecamatanLists = dataRepo.GetKecamatan(kotaId);
+                List<KecamatanList> kecamatanLists = dataRepo.GetKecamatan(kotaId, _env.WebRootPath);
 
                 if (kecamatanLists.Count > 0)
                 {
@@ -162,7 +162,7 @@ namespace ApiWilayahIndonesia.Controllers
                     return Ok(kelurahan);
                 }
 
-                List<KelurahanList> kelurahanLists = dataRepo.GetKelurahan(kecamatanId);
+                List<KelurahanList> kelurahanLists = dataRepo.GetKelurahan(kecamatanId, _env.WebRootPath);
 
                 if (kelurahanLists.Count > 0)
                 {
