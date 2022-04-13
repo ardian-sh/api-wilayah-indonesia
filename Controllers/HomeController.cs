@@ -20,7 +20,7 @@ namespace home.Controllers
 
         public IActionResult Index()
         {
-            string urlSheme = Url.ActionLink()+ "api/wilayah-indonesia";
+            string urlSheme = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/api/wilayah-indonesia";
 
             ViewBag.sheme = urlSheme;
             return View();
