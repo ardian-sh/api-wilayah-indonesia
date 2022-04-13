@@ -1,0 +1,110 @@
+﻿<h4>Provinsi</h4>
+<hr />
+<p>
+    Method Provinsi digunakan untuk mengambil data provinsi yang ada di Indonesia.
+</p>
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-provinsi-url-tab" data-toggle="tab" href="#nav-provinsi-url" role="tab" aria-controls="nav-provinsi-url" aria-selected="true">Url</a>
+        <a class="nav-item nav-link" id="nav-provinsi-parameter-tab" data-toggle="tab" href="#nav-provinsi-parameter" role="tab" aria-controls="nav-provinsi-parameter" aria-selected="false">Parameter</a>
+        <a class="nav-item nav-link" id="nav-provinsi-sukses-tab" data-toggle="tab" href="#nav-provinsi-sukses" role="tab" aria-controls="nav-provinsi-sukses" aria-selected="false">Response sukses</a>
+        <a class="nav-item nav-link" id="nav-provinsi-gagal-tab" data-toggle="tab" href="#nav-provinsi-gagal" role="tab" aria-controls="nav-provinsi-gagal" aria-selected="false">Response gagal</a>
+        <a class="nav-item nav-link" id="nav-provinsi-penjelasan-tab" data-toggle="tab" href="#nav-provinsi-penjelasan" role="tab" aria-controls="nav-provinsi-penjelasan" aria-selected="false">Penjelasan response</a>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-provinsi-url" role="tabpanel" aria-labelledby="nav-provinsi-url-tab">
+        <div class="table-responsive-sm" style="margin-top:10px;">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Url</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GET</td>
+                        <td>@ViewBag.sheme/provinsi</td>
+                        <td>Menampilkan semua provinsi di Indonesia</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td>@ViewBag.sheme/provinsi?id=32</td>
+                        <td>Menampilkan satu provinsi di Indonesia</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-provinsi-parameter" role="tabpanel" aria-labelledby="nav-provinsi-parameter-tab">
+        <div class="table-responsive-sm" style="margin-top:10px;">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Parameter</th>
+                        <th>Wajib</th>
+                        <th>type</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GET</td>
+                        <td>id</td>
+                        <td>tidak</td>
+                        <td>int</td>
+                        <td>id provinsi</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-provinsi-sukses" role="tabpanel" aria-labelledby="nav-provinsi-sukses-tab">
+        <div style="margin-top:10px;">
+            <script src="https://gist.github.com/ardian-sh/f714897ea4ba03c15bee86023134874e.js"></script>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-provinsi-gagal" role="tabpanel" aria-labelledby="nav-provinsi-gagal-tab">
+        <div style="margin-top:10px;">
+            <script src="https://gist.github.com/ardian-sh/5bf092b9c780415752d8a90335d06354.js"></script>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-provinsi-penjelasan" role="tabpanel" aria-labelledby="nav-provinsi-penjelasan-tab">
+        <div class="table-responsive-sm" style="margin-top:10px;">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Komponen</th>
+                        <th>Type</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kode</td>
+                        <td>Int</td>
+                        <td>Kode status response</td>
+                    </tr>
+                    <tr>
+                        <td>Deskripsi</td>
+                        <td>String</td>
+                        <td>Penjelasan kode</td>
+                    </tr>
+                    <tr>
+                        <td>Id</td>
+                        <td>Int</td>
+                        <td>Id provinsi</td>
+                    </tr>
+                    <tr>
+                        <td>Nama</td>
+                        <td>String</td>
+                        <td>Nama provinsi</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

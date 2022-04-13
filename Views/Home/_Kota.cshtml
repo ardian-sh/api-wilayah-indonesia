@@ -1,0 +1,110 @@
+﻿<br /><h4>Kota</h4>
+<hr />
+<p>
+    Method kota digunakan untuk mengambil data kota berdasarkan provinsi yang ada di Indonesia.
+</p>
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-kota-url-tab" data-toggle="tab" href="#nav-kota-url" role="tab" aria-controls="nav-kota-url" aria-selected="true">Url</a>
+        <a class="nav-item nav-link" id="nav-kota-parameter-tab" data-toggle="tab" href="#nav-kota-parameter" role="tab" aria-controls="nav-kota-parameter" aria-selected="false">Parameter</a>
+        <a class="nav-item nav-link" id="nav-kota-sukses-tab" data-toggle="tab" href="#nav-kota-sukses" role="tab" aria-controls="nav-kota-sukses" aria-selected="false">Response sukses</a>
+        <a class="nav-item nav-link" id="nav-kota-gagal-tab" data-toggle="tab" href="#nav-kota-gagal" role="tab" aria-controls="nav-kota-gagal" aria-selected="false">Response gagal</a>
+        <a class="nav-item nav-link" id="nav-kota-penjelasan-tab" data-toggle="tab" href="#nav-kota-penjelasan" role="tab" aria-controls="nav-kota-penjelasan" aria-selected="false">Penjelasan response</a>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-kota-url" role="tabpanel" aria-labelledby="nav-kota-url-tab">
+        <div class="table-responsive-sm" style="margin-top:10px;">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Url</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GET</td>
+                        <td>@ViewBag.sheme/kota?provinsi=32</td>
+                        <td>Menampilkan kota berdasarkan provinsi di Indonesia</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-kota-parameter" role="tabpanel" aria-labelledby="nav-kota-parameter-tab">
+        <div class="table-responsive-sm" style="margin-top:10px;">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Parameter</th>
+                        <th>Wajib</th>
+                        <th>type</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GET</td>
+                        <td>provinsi</td>
+                        <td>ya</td>
+                        <td>int</td>
+                        <td>id provinsi</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-kota-sukses" role="tabpanel" aria-labelledby="nav-kota-sukses-tab">
+        <div style="margin-top:10px;">
+            <script src="https://gist.github.com/ardian-sh/63cee2a883eeae56aa3043da5a322609.js"></script>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-kota-gagal" role="tabpanel" aria-labelledby="nav-kota-gagal-tab">
+        <div style="margin-top:10px;">
+            <script src="https://gist.github.com/ardian-sh/f6c656b7077f39f73184747b85b1331a.js"></script>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-kota-penjelasan" role="tabpanel" aria-labelledby="nav-kota-penjelasan-tab">
+        <div class="table-responsive-sm" style="margin-top:10px;">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Komponen</th>
+                        <th>Type</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kode</td>
+                        <td>Int</td>
+                        <td>Kode status response</td>
+                    </tr>
+                    <tr>
+                        <td>Deskripsi</td>
+                        <td>String</td>
+                        <td>Penjelasan kode</td>
+                    </tr>
+                    <tr>
+                        <td>Id</td>
+                        <td>Int</td>
+                        <td>Id kota</td>
+                    </tr>
+                    <tr>
+                        <td>provinsiId</td>
+                        <td>Int</td>
+                        <td>Id provinsi</td>
+                    </tr>
+                    <tr>
+                        <td>Nama</td>
+                        <td>String</td>
+                        <td>Nama kota</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

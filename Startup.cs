@@ -29,6 +29,8 @@ namespace ApiWilayahIndonesia
 
             services.AddControllersWithViews();
 
+            services.AddMvc().AddRazorRuntimeCompilation();
+
             //comment swager
             //services.AddSwaggerGen(c =>
             //{

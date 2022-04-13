@@ -3,6 +3,21 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h3>Dokumentasi API Wilayah Indonesia</h3>
 </div>
+<hr />
+<div class="row">
+    <div class="col text-justify">
+        <p>
+            Dokumentasi ini menjelaskan penggunakan API untuk wilayah indonesia yang berisi data semua
+            <b>Provinsi, Kota/Kabupaten,Kecamatan</b> dan <b>Kelurahan</b>. Sumber API ini berasal dari
+            <a href="https://github.com/edwardsamuel/Wilayah-Administratif-Indonesia">https://github.com/edwardsamuel/Wilayah-Administratif-Indonesia</a>
+            , dengan update data terkahir tahun 2018.
+        </p>
+        <partial name="_Provinsi.cshtml" />
+        <partial name="_Kota.cshtml" />
+        <partial name="_Kecamatan.cshtml" />
+        <partial name="_Kelurahan.cshtml" />
+    </div>
+</div>
+

@@ -1,0 +1,110 @@
+﻿<br /><h4>Kelurahan</h4>
+<hr />
+<p>
+    Method kelurahan digunakan untuk mengambil data kelurahan berdasarkan kecamatan yang ada di Indonesia.
+</p>
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-kelurahan-url-tab" data-toggle="tab" href="#nav-kelurahan-url" role="tab" aria-controls="nav-kelurahan-url" aria-selected="true">Url</a>
+        <a class="nav-item nav-link" id="nav-kelurahan-parameter-tab" data-toggle="tab" href="#nav-kelurahan-parameter" role="tab" aria-controls="nav-kelurahan-parameter" aria-selected="false">Parameter</a>
+        <a class="nav-item nav-link" id="nav-kelurahan-sukses-tab" data-toggle="tab" href="#nav-kelurahan-sukses" role="tab" aria-controls="nav-kelurahan-sukses" aria-selected="false">Response sukses</a>
+        <a class="nav-item nav-link" id="nav-kelurahan-gagal-tab" data-toggle="tab" href="#nav-kelurahan-gagal" role="tab" aria-controls="nav-kelurahan-gagal" aria-selected="false">Response gagal</a>
+        <a class="nav-item nav-link" id="nav-kelurahan-penjelasan-tab" data-toggle="tab" href="#nav-kelurahan-penjelasan" role="tab" aria-controls="nav-kelurahan-penjelasan" aria-selected="false">Penjelasan response</a>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-kelurahan-url" role="tabpanel" aria-labelledby="nav-kelurahan-url-tab">
+        <div class="table-responsive-sm" style="margin-top:10px;">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Url</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GET</td>
+                        <td>@ViewBag.sheme/kelurahan?kecamatan=3278040</td>
+                        <td>Menampilkan kelurahan berdasarkan kecamatan di Indonesia</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-kelurahan-parameter" role="tabpanel" aria-labelledby="nav-kelurahan-parameter-tab">
+        <div class="table-responsive-sm" style="margin-top:10px;">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Parameter</th>
+                        <th>Wajib</th>
+                        <th>type</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GET</td>
+                        <td>kecamatan</td>
+                        <td>ya</td>
+                        <td>int</td>
+                        <td>id kecamatan</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-kelurahan-sukses" role="tabpanel" aria-labelledby="nav-kelurahan-sukses-tab">
+        <div style="margin-top:10px;">
+            <script src="https://gist.github.com/ardian-sh/e43db75079850560bc0a9ba7e00250fa.js"></script>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-kelurahan-gagal" role="tabpanel" aria-labelledby="nav-kelurahan-gagal-tab">
+        <div style="margin-top:10px;">
+            <script src="https://gist.github.com/ardian-sh/437b16411813936cf2527a47b898e633.js"></script>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-kelurahan-penjelasan" role="tabpanel" aria-labelledby="nav-kelurahan-penjelasan-tab">
+        <div class="table-responsive-sm" style="margin-top:10px;">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Komponen</th>
+                        <th>Type</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kode</td>
+                        <td>Int</td>
+                        <td>Kode status response</td>
+                    </tr>
+                    <tr>
+                        <td>Deskripsi</td>
+                        <td>String</td>
+                        <td>Penjelasan kode</td>
+                    </tr>
+                    <tr>
+                        <td>Id</td>
+                        <td>Int</td>
+                        <td>Id kelurahan</td>
+                    </tr>
+                    <tr>
+                        <td>kecamatanId</td>
+                        <td>Int</td>
+                        <td>Id kecamatan</td>
+                    </tr>
+                    <tr>
+                        <td>Nama</td>
+                        <td>String</td>
+                        <td>Nama kelurahan</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

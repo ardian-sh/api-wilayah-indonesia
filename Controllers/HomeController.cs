@@ -20,13 +20,12 @@ namespace home.Controllers
 
         public IActionResult Index()
         {
+            string urlSheme = Url.ActionLink(protocol: Request.Scheme)+ "api/wilayah-indonesia";
+
+            ViewBag.sheme = urlSheme;
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
