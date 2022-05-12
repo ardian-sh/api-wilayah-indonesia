@@ -35,10 +35,10 @@ namespace ApiWilayahIndonesia.Controllers
                 if (!int.TryParse(Id, out int ProvinsiIdCheck) && !string.IsNullOrEmpty(Id))
                 {
                     provinsi.Deskripsi = string.Format("Nilai {0} tidak valid", Id);
-                    provinsi.Kode = 400;
+                    provinsi.Kode = StatusCodes.Status400BadRequest;
                     provinsi.Provinsi = new();
 
-                    return Ok(provinsi);
+                    return BadRequest(provinsi);
                 }
 
                 int? idProvinsi = string.IsNullOrEmpty(Id) ? null: ProvinsiIdCheck;
@@ -47,25 +47,29 @@ namespace ApiWilayahIndonesia.Controllers
                 if(provinsiLists.Count > 0)
                 {
                     provinsi.Deskripsi = "OK";
-                    provinsi.Kode = 200;
+                    provinsi.Kode = StatusCodes.Status200OK;
                     provinsi.Provinsi = provinsiLists;
+
+                    return Ok(provinsi);
                 }
                 else
                 {
                     provinsi.Deskripsi = "Data tidak ditemukan";
-                    provinsi.Kode = 404;
+                    provinsi.Kode = StatusCodes.Status404NotFound;
                     provinsi.Provinsi = new();
+
+                    return NotFound(provinsi);
                 }
             }
             catch
             {
                 provinsi.Deskripsi = "Terjadi kesalahan saat memproses permintaan";
-                provinsi.Kode = 500;
+                provinsi.Kode = StatusCodes.Status500InternalServerError;
                 provinsi.Provinsi = new();
+
+                return StatusCode(StatusCodes.Status500InternalServerError, provinsi);
             }
-
-
-            return Ok(provinsi);
+            
         }
 
         [HttpGet("kota")]
@@ -77,34 +81,38 @@ namespace ApiWilayahIndonesia.Controllers
                 if (!int.TryParse(provinsi, out int idProvinsi))
                 {
                     kota.Deskripsi = string.Format("Nilai {0} tidak valid", provinsi);
-                    kota.Kode = 400;
+                    kota.Kode = StatusCodes.Status400BadRequest;
                     kota.Kota = new();
 
-                    return Ok(kota);
+                    return BadRequest(kota);
                 }
 
                 List<KotaList> kotaLists = dataRepo.GetKota(idProvinsi, _env.WebRootPath);
                 if (kotaLists.Count > 0)
                 {
                     kota.Deskripsi = "OK";
-                    kota.Kode = 200;
+                    kota.Kode = StatusCodes.Status200OK;
                     kota.Kota = kotaLists;
+
+                    return Ok(kota);
                 }
                 else
                 {
                     kota.Deskripsi = "Data tidak ditemukan";
-                    kota.Kode = 404;
+                    kota.Kode = StatusCodes.Status404NotFound;
                     kota.Kota = new();
+
+                    return NotFound(kota);
                 }
             }
             catch
             {
                 kota.Deskripsi = "Terjadi kesalahan saat memproses permintaan";
-                kota.Kode = 500;
+                kota.Kode = StatusCodes.Status500InternalServerError;
                 kota.Kota = new();
-            }
 
-            return Ok(kota);
+                return StatusCode(StatusCodes.Status500InternalServerError, kota);
+            }
         }
 
         [HttpGet("kecamatan")]
@@ -116,10 +124,10 @@ namespace ApiWilayahIndonesia.Controllers
                 if (!int.TryParse(kota, out int kotaId))
                 {
                     kecamatan.Deskripsi = string.Format("Nilai {0} tidak valid", kota);
-                    kecamatan.Kode = 400;
+                    kecamatan.Kode = StatusCodes.Status400BadRequest;
                     kecamatan.Kecamatan = new();
 
-                    return Ok(kecamatan);
+                    return BadRequest(kecamatan);
                 }
 
                 List<KecamatanList> kecamatanLists = dataRepo.GetKecamatan(kotaId, _env.WebRootPath);
@@ -127,14 +135,19 @@ namespace ApiWilayahIndonesia.Controllers
                 if (kecamatanLists.Count > 0)
                 {
                     kecamatan.Deskripsi = "OK";
-                    kecamatan.Kode = 200;
+                    kecamatan.Kode = StatusCodes.Status200OK;
                     kecamatan.Kecamatan = kecamatanLists;
+
+
+                    return Ok(kecamatan);
                 }
                 else
                 {
                     kecamatan.Deskripsi = "Data tidak ditemukan";
-                    kecamatan.Kode = 404;
+                    kecamatan.Kode = StatusCodes.Status404NotFound;
                     kecamatan.Kecamatan = new();
+
+                    return NotFound(kecamatan);
                 }
             }
             catch
@@ -142,9 +155,9 @@ namespace ApiWilayahIndonesia.Controllers
                 kecamatan.Deskripsi = "Terjadi kesalahan saat memproses permintaan";
                 kecamatan.Kode = 500;
                 kecamatan.Kecamatan = new();
-            }
 
-            return Ok(kecamatan);
+                return StatusCode(StatusCodes.Status500InternalServerError, kecamatan);
+            }
         }
 
         [HttpGet("kelurahan")]
@@ -156,10 +169,10 @@ namespace ApiWilayahIndonesia.Controllers
                 if (!long.TryParse(kecamatan, out long kecamatanId))
                 {
                     kelurahan.Deskripsi = string.Format("Nilai {0} tidak valid", kecamatan);
-                    kelurahan.Kode = 400;
+                    kelurahan.Kode = StatusCodes.Status400BadRequest;
                     kelurahan.Kelurahan = new();
 
-                    return Ok(kelurahan);
+                    return BadRequest(kelurahan);
                 }
 
                 List<KelurahanList> kelurahanLists = dataRepo.GetKelurahan(kecamatanId, _env.WebRootPath);
@@ -167,24 +180,28 @@ namespace ApiWilayahIndonesia.Controllers
                 if (kelurahanLists.Count > 0)
                 {
                     kelurahan.Deskripsi = "OK";
-                    kelurahan.Kode = 200;
+                    kelurahan.Kode = StatusCodes.Status200OK;
                     kelurahan.Kelurahan = kelurahanLists;
+
+                    return Ok(kelurahan);
                 }
                 else
                 {
                     kelurahan.Deskripsi = "Data tidak ditemukan";
-                    kelurahan.Kode = 404;
+                    kelurahan.Kode = StatusCodes.Status404NotFound;
                     kelurahan.Kelurahan = new();
+
+                    return NotFound(kelurahan);
                 }
             }
             catch
             {
                 kelurahan.Deskripsi = "Terjadi kesalahan saat memproses permintaan";
-                kelurahan.Kode = 500;
+                kelurahan.Kode = StatusCodes.Status500InternalServerError;
                 kelurahan.Kelurahan = new();
-            }
 
-            return Ok(kelurahan);
+                return StatusCode(StatusCodes.Status500InternalServerError, kelurahan);
+            }
         }
     }
 
