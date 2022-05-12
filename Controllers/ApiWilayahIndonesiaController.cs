@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using WilayahIndonesia.Repository;
 using kelurahan.Model;
 using Microsoft.AspNetCore.Hosting;
+using ApiWilayahIndonesia.Interface;
 
 namespace ApiWilayahIndonesia.Controllers
 {
@@ -18,12 +19,12 @@ namespace ApiWilayahIndonesia.Controllers
     [ApiController]
     public class ApiWilayahIndonesiaController : ControllerBase
     {
-        public readonly IWebHostEnvironment _env;
-        public ApiWilayahIndonesiaController(IWebHostEnvironment hostEnvironment)
+        readonly IWilayahIndonesiaInterface _dataRepo;
+
+        public ApiWilayahIndonesiaController(IWilayahIndonesiaInterface dataRepo)
         {
-            _env = hostEnvironment;
+            _dataRepo = dataRepo;
         }
-        readonly WilayahIndonesiaRepository dataRepo = new();
 
 
         [HttpGet("provinsi")]
@@ -43,7 +44,7 @@ namespace ApiWilayahIndonesia.Controllers
 
                 int? idProvinsi = string.IsNullOrEmpty(Id) ? null: ProvinsiIdCheck;
 
-                List<ProvinsiList> provinsiLists = dataRepo.GetAllProvinsi(idProvinsi,_env.WebRootPath);
+                List<ProvinsiList> provinsiLists = _dataRepo.GetAllProvinsi(idProvinsi);
                 if(provinsiLists.Count > 0)
                 {
                     provinsi.Deskripsi = "OK";
@@ -87,7 +88,7 @@ namespace ApiWilayahIndonesia.Controllers
                     return BadRequest(kota);
                 }
 
-                List<KotaList> kotaLists = dataRepo.GetKota(idProvinsi, _env.WebRootPath);
+                List<KotaList> kotaLists = _dataRepo.GetKota(idProvinsi);
                 if (kotaLists.Count > 0)
                 {
                     kota.Deskripsi = "OK";
@@ -130,7 +131,7 @@ namespace ApiWilayahIndonesia.Controllers
                     return BadRequest(kecamatan);
                 }
 
-                List<KecamatanList> kecamatanLists = dataRepo.GetKecamatan(kotaId, _env.WebRootPath);
+                List<KecamatanList> kecamatanLists = _dataRepo.GetKecamatan(kotaId);
 
                 if (kecamatanLists.Count > 0)
                 {
@@ -175,7 +176,7 @@ namespace ApiWilayahIndonesia.Controllers
                     return BadRequest(kelurahan);
                 }
 
-                List<KelurahanList> kelurahanLists = dataRepo.GetKelurahan(kecamatanId, _env.WebRootPath);
+                List<KelurahanList> kelurahanLists = _dataRepo.GetKelurahan(kecamatanId);
 
                 if (kelurahanLists.Count > 0)
                 {

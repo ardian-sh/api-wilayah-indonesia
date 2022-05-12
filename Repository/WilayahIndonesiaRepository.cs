@@ -7,16 +7,23 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using kelurahan.Model;
+using ApiWilayahIndonesia.Interface;
+using Microsoft.AspNetCore.Hosting;
 
 namespace WilayahIndonesia.Repository
 {
-    public class WilayahIndonesiaRepository
+    public class WilayahIndonesiaRepository : IWilayahIndonesiaInterface
     {
+        public readonly IWebHostEnvironment _env;
+        public WilayahIndonesiaRepository(IWebHostEnvironment hostEnvironment)
+        {
+            _env = hostEnvironment;
+        }
 
         #region Provinsi
-        public List<ProvinsiList> GetAllProvinsi(int? provinsiid, string path)
+        public List<ProvinsiList> GetAllProvinsi(int? provinsiid)
         {
-            string fileName = Path.Combine(path, "csv","provinces.csv");
+            string fileName = Path.Combine(_env.WebRootPath, "csv","provinces.csv");
 
             List<ProvinsiList> provinsiLists = new();
             if(provinsiid == null)
@@ -45,9 +52,9 @@ namespace WilayahIndonesia.Repository
         #endregion
 
         #region Kota
-        public List<KotaList> GetKota(int provinsiId, string path)
+        public List<KotaList> GetKota(int provinsiId)
         {
-            string fileName = Path.Combine(path,"csv", "regencies.csv");
+            string fileName = Path.Combine(_env.WebRootPath, "csv", "regencies.csv");
 
             List<KotaList> kotaLists = new();
 
@@ -71,9 +78,9 @@ namespace WilayahIndonesia.Repository
         #endregion
 
         #region Kecamatan
-        public List<KecamatanList> GetKecamatan(int kotaId,string path)
+        public List<KecamatanList> GetKecamatan(int kotaId)
         {
-            string fileName = Path.Combine(path, "csv", "districts.csv");
+            string fileName = Path.Combine(_env.WebRootPath, "csv", "districts.csv");
 
             List<KecamatanList> kecamatanLists = new();
 
@@ -97,9 +104,9 @@ namespace WilayahIndonesia.Repository
         #endregion
 
         #region Kelurahan
-        public List<KelurahanList> GetKelurahan(long kecamatanId,string path)
+        public List<KelurahanList> GetKelurahan(long kecamatanId)
         {
-            string fileName = Path.Combine(path, "csv", "villages.csv");
+            string fileName = Path.Combine(_env.WebRootPath, "csv", "villages.csv");
 
             List<KelurahanList> kelurahanLists = new();
 
